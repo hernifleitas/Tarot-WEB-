@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a2e;
+    color: #f0f0f0;
+}
+
+section{
+    padding: 50px;
+    min-height: 300px; /* Altura mínima para cada sección */
+    opacity: 1;        /* Siempre visibles desde el inicio */
+    transform: translateY(50px); /* Comienza desplazada hacia abajo */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Animaciones para la transición */
+}
+
+section.visible {
+    opacity: 1;        /* Se hace visible */
+    transform: translateY(0); /* Vuelve a su lugar original */
+}
+
+.imgPresentacion {
+    max-width: 100%;           /* La imagen no se hará más grande que el 100% de su contenedor */
+    height: auto;              /* Mantiene la relación de aspecto original */
+    margin: 0 auto;            /* Centra la imagen horizontalmente */
+    display: block;            /* Hace que la imagen se comporte como un bloque */
+    margin-top: 20px;          /* Espacio opcional arriba de la imagen */
+}
+
+
+.aboutme-container{
+    display: block;
+    width: auto;
+    margin: 10px;
+    color: rgba(255, 255, 255, 0.39);
+    padding: 20px;
+    background-color: #1a1a2e;
+    border: 1px solid #1a1a5e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.aboutme-container{
+    display: block;
+    background-size: contain;
+    width: auto;
+    justify-content: center;
+    height: auto;
+    border-radius: 8px;
+}
+
+.aboutme-image{
+    border-radius: 20px;
+    width:50%;
+}
+
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;  /* A 20px de la parte inferior */
+    right: 20px;   /* A 20px del borde derecho */
+    background-color: #25D366; /* Color verde de WhatsApp */
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Para asegurarse de que esté por encima de otros elementos */
+    opacity: 0; /* Asegura que sea invisible */
+    transition: opacity 2s ease; /* Transición suave */
+    transform: translateY(20px);
+}
+
+.whatsapp-icon.show {
+    display: block; /* Muestra el icono cuando tiene la clase 'show' */
+    opacity: 1; /* Asegura que sea visible */
+    transform: rotateY(0);
+    
+}
+
+.whatsapp-icon a {
+    color: white;
+    font-size: 36px; /* Tamaño del ícono */
+    text-decoration: none;
+}
+
+.whatsapp-icon a:hover {
+    color: #128C7E;  /* Color verde más oscuro cuando se pasa el mouse */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: #f0f0f0;
+    transition: all 0.1s ease-out;
+    border-bottom:1px solid #f0f0f0;
+}
+
+.hero {
+    background-image: url(img/tarotImage.avif);
+    background-size: cover;
+    text-align: center;
+    height: 880px;
+    padding: 100px 0px;
+}
+
+.hero h2 {
+    font-size: 4em;
+    color: #ffffffa9;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.servicios {
+    text-align: center;
+    padding: 40px;
+    background-color: #1a1a2e;
+    cursor: pointer;
+    
+}
+
+.servicios h2 {
+    font-size: 2.5em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.servicios p {
+    font-size: 1.1em;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+/* Estilo de cada servicio */
+.servicio {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    background-color: #1a2e3a;
+    border: 1px solid #dddddd3d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilo para las imágenes de los servicios */
+.imagen-servicio {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Títulos y descripciones de los servicios */
+.servicio h3 {
+    font-size: 1.8em;
+    color: #666;
+    margin: 15px 0;
+}
+
+.servicio p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.menu-container {
+    display: flex;           /* Activa Flexbox */
+    justify-content: space-between;  /* Distribuye los elementos a los extremos */
+    align-items: center;     /* Centra verticalmente los iconos */
+    position: fixed;         /* Fija los iconos en la pantalla */
+    top: 10px;               /* Espacio desde la parte superior */
+    left: 0;
+    right: 0;
+    padding: 0 20px;         /* Espacio a los lados */
+    z-index: 1000;           /* Asegura que los iconos estén por encima de otros elementos */
+    
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding: 40px;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+@media (max-width:830px){
+    .servicio {
+        width: 80%;
+        margin: 20px auto;
+    }
+    .aboutme-image{
+        width:70%;
+    }
+}
+
+ @media (max-width:768px){
+
+    nav ul li{
+        display: flex;
+    }
+ }
+
+
+ @media (max-width:476px){
+    .aboutme-image{
+        width:90%;
+    }
+ }
